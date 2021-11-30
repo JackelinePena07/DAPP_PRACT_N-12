@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function loadXMLDoc()
+{
+var xmlhttp;
+var txt, x, i;
+if (window.XMLHttpRequest)
+ {// para IE7+, Firefox, Chrome, Opera, Safari
+ xmlhttp = new XMLHttpRequest();
+ }
+else
+ {// para IE6, IE5
+ xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+ }
+xmlhttp.onreadystatechange=function()
+ {
+ if (xmlhttp.readyState==4 && this.status==200)
+ {
+ 	xmlDoc = xmlhttp.responseXML;
+ txt = "";
+ x = xmlDoc.getElementsByTagName("ARTIST");
+for (i = 0; i < x.length; i++)
+{
+ txt += x[i].childNodes[0].nodeValue + "<br>";
+ }
+ document.getElementById("myDiv").innerHTML=txt;
+}
+ }
+xmlhttp.open("GET","cd_catalog.xml",true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<h2>Mi coleccion de CD's:</h2>
+<div id="myDiv"></div>
+<button type="button" onclick="loadXMLDoc()">Cargar mi coleccion de
+CD's</button>
+</body>
+</html>
