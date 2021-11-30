@@ -1,0 +1,2 @@
+D:\PROYECTOS DEL VISUAL\_DDA\AJAX\obj\Debug\AJAX.csproj.AssemblyReference.cache
+D:\PROYECTOS DEL VISUAL\_DDA\AJAX\obj\Debug\AJAX.csproj.CoreCompileInputs.cache
